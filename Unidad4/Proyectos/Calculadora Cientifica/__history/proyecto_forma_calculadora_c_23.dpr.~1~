@@ -1,0 +1,14 @@
+program proyecto_forma_calculadora_c_23;
+
+uses
+  Vcl.Forms,
+  forma_calculadora_19400595 in 'forma_calculadora_19400595.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

@@ -1,0 +1,80 @@
+CURSOR MACRO ren, col, pag
+    mov ah, 2
+    mov dh, ren
+    mov dl, col
+    mov bh, 0
+    int 10H
+ENDM
+impSinColor MACRO cadena
+    mov ah, 9
+    lea dx, cadena
+    int 21H
+ENDM
+crearArchivo MACRO ruta, tipoArchivo
+    mov ah, 3CH
+    lea dx, ruta
+    mov cx, tipoArchivo
+    int 21H
+    ;nota: lea interrupcion regresa el manejador en Ax    
+ENDM
+abrirArchivo MACRO ruta, modoApertura
+    mov ah,3DH
+    lea dx,ruta
+    mov al,modoApertura
+    int 21H
+    ;modos de apertura:
+    ;0 = solo lectura 
+    ;1 = solo escritura 
+    ;2 = lectura y escritura                             
+ENDM
+escribirArchivo MACRO manejador, totalEscribir, datosEscribir
+    mov ah, 40H
+    mov bx, manejador
+    mov cx, totalEscribir
+    lea dx, datosEscribir
+    int 21H   
+ENDM
+
+leerArchivo MACRO manejador, cuantosLeer, leidos
+    mov ah, 3FH
+    mov bx, manejador
+    mov cx, cuantosLeer
+    lea dx, leidos
+    int 21H
+ENDM
+
+leerCadena MACRO cadena
+    mov ah, 10
+    lea dx, cadena
+    int 21H
+ENDM
+
+copiarCadena MACRO fuente, destino, cantidad
+    mov cx, cantidad
+    lea si, fuente
+    lea di, destino
+    rep movsb 
+ENDM
+
+compararCadena MACRO fuente, destino, cantidad
+    mov cx, cantidad
+    lea si, fuente
+    lea di, destino
+    repe CMPSB
+ENDM
+
+impresora MACRO leer, cantidad
+mov si, offset leer
+mov cx, cantidad
+
+    mov ah, 5
+    mov dl, [si]
+    int 21H 
+inc si
+impresora ENDM
+
+tecla MACRO
+    cursor 21,67,0
+    mov ah, 1   ;guarda el dato en al
+    int 21H
+tecla ENDM

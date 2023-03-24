@@ -1,0 +1,147 @@
+impCadColor MACRO mensaje,longitud,ren,col,pag,modo,color
+
+    mov ah,19
+    lea bp,mensaje
+    mov cx,longitud
+    mov dh,ren
+    mov dl,col
+    mov bh,pag
+    mov al,modo
+    mov bl,color
+    int 10h
+
+impCadColor endm
+
+cursor MACRO ren,col,pag
+
+    mov ah,2
+    mov dh,ren
+    mov dl,col
+    mov bh,pag
+    int 10h
+
+cursor endm
+
+impCadSinColor MACRO mensaje
+
+    mov ah,9
+    lea dx,mensaje
+    int 21h
+
+
+impCadSinColor endm
+
+impSinColor MACRO cadena
+    mov ah, 9
+    mov dx, offset cadena
+    int 21H
+impSinColor ENDM
+
+tecla MACRO
+
+    mov ah,0;Codigo de rastreo
+    int 16h
+    ;Espera una tecla sin eco
+tecla endm      
+
+CAR_COLOR MACRO CAN,CAR,PAG,COLOR
+    MOV AH,9 
+    MOV CX,CAN 
+    MOV AL,CAR
+    MOV BH,PAG
+    MOV BL,COLOR
+    INT 10H
+CAR_COLOR ENDM
+
+cap_cadena MACRO Resp
+    MOV AH, 10
+    LEA DX, Resp
+    INT 21H    
+cap_cadena ENDM
+
+crearDirectorio MACRO ruta
+    mov ah, 39H  ;Crear directorio
+    lea dx, ruta
+    int 21H
+crearDirectorio ENDM
+
+crearArchivo MACRO ruta, tipoArchivo
+    mov ah, 3CH
+    lea dx, ruta
+    mov cx, tipoArchivo
+    int 21H
+    ;nota: lea interrupcion regresa el manejador en Ax    
+crearArchivo ENDM
+abrirArchivo MACRO ruta, modoApertura
+    mov ah,3DH
+    lea dx,ruta
+    mov al,modoApertura
+    int 21H
+    ;modos de apertura:
+    ;0 = solo lectura 
+    ;1 = solo escritura 
+    ;2 = lectura y escritura                             
+abrirArchivo ENDM
+escribirArchivo MACRO manejador, totalEscribir, datosEscribir
+    mov ah, 40H
+    mov bx, manejador
+    mov cx, totalEscribir
+    lea dx, datosEscribir
+    int 21H   
+escribirArchivo ENDM
+
+leerArchivo MACRO manejador, cuantosLeer, leidos
+    mov ah, 3FH
+    mov bx, manejador
+    mov cx, cuantosLeer
+    lea dx, leidos
+    int 21H
+leerArchivo ENDM     
+
+FECHA MACRO DIA1,DIA2,MES1,MES2
+	MOV AH,2AH
+	INT 21H
+	
+	MOV AL,DH
+	AAM
+	ADD AX,3030H
+		MOV DIA1,AH
+		MOV DIA2,AL
+	MOV AL,DL
+	AAM
+	ADD AX,3030H
+		MOV MES1,AH
+		MOV MES2,AL
+FECHA ENDM
+HORA MACRO H1,H2,M1,M2,S1,S2
+	MOV AH,2CH
+	INT 21H
+	MOV AL,CH
+	AAM
+	ADD AX,3030H
+		MOV H1,AH
+		MOV H2,AL
+	
+	MOV AL,CL
+	AAM
+	ADD AX,3030H
+		MOV M1,AH
+		MOV M2,AL
+	MOV AL,DH
+	AAM
+	ADD AX,3030H
+		MOV S1,AH
+		MOV S2,AL
+HORA ENDM
+                   
+CadenaImpresora MACRO Longitud,Msj,Ciclo
+	MOV CX,0
+	MOV CL,Longitud
+	lea SI, Msj
+ 	Ciclo:
+		MOV AH,5
+		MOV DL,[SI]
+		INT 21H
+	INC SI
+	LOOP Ciclo
+CadenaImpresora ENDM

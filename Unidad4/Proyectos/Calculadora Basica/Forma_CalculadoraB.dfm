@@ -1,0 +1,144 @@
+object FormaCalculadoraB: TFormaCalculadoraB
+  Left = 0
+  Top = 0
+  BorderStyle = bsSingle
+  Caption = 'Calculadora Basica Hibrida'
+  ClientHeight = 506
+  ClientWidth = 362
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 19
+  object Panel1: TPanel
+    Left = 8
+    Top = 80
+    Width = 342
+    Height = 321
+    Color = clBackground
+    ParentBackground = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 40
+      Top = 40
+      Width = 26
+      Height = 19
+      Caption = 'N1:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 40
+      Top = 78
+      Width = 26
+      Height = 16
+      Caption = 'N2:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 50
+      Top = 122
+      Width = 16
+      Height = 19
+      Caption = 'R:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Edit1: TEdit
+      Left = 72
+      Top = 32
+      Width = 193
+      Height = 27
+      TabOrder = 0
+    end
+    object Edit2: TEdit
+      Left = 72
+      Top = 65
+      Width = 193
+      Height = 27
+      TabOrder = 1
+    end
+    object Edit3: TEdit
+      Left = 72
+      Top = 119
+      Width = 193
+      Height = 27
+      TabOrder = 2
+    end
+    object Button1: TButton
+      Left = 48
+      Top = 192
+      Width = 75
+      Height = 25
+      Caption = 'ADD'
+      TabOrder = 3
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 208
+      Top = 192
+      Width = 75
+      Height = 25
+      Caption = 'SUB'
+      TabOrder = 4
+    end
+    object Button3: TButton
+      Left = 48
+      Top = 240
+      Width = 75
+      Height = 25
+      Caption = 'MULTI'
+      TabOrder = 5
+    end
+    object Button4: TButton
+      Left = 208
+      Top = 240
+      Width = 75
+      Height = 25
+      Caption = 'DIV'
+      TabOrder = 6
+    end
+  end
+  object Panel2: TPanel
+    Left = 8
+    Top = 8
+    Width = 342
+    Height = 66
+    Caption = 'Hibrida'
+    TabOrder = 1
+  end
+  object Button5: TButton
+    Left = 58
+    Top = 432
+    Width = 75
+    Height = 25
+    Caption = 'Limpiar'
+    TabOrder = 2
+  end
+  object Button6: TButton
+    Left = 216
+    Top = 432
+    Width = 75
+    Height = 25
+    Caption = 'Salir'
+    TabOrder = 3
+  end
+end

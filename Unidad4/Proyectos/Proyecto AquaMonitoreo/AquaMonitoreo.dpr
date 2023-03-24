@@ -1,0 +1,30 @@
+program AquaMonitoreo;
+
+uses
+  Vcl.Forms,
+  Forma_Monitor in 'Forma_Monitor.pas' {FormaVentanaPrincipal},
+  Forma_MasInfo in 'Forma_MasInfo.pas' {MasInfo},
+  Forma_Datos in 'Forma_Datos.pas' {FormaDatos},
+  Forma_Devices in 'Forma_Devices.pas' {Devices},
+  Forma_Mapa in 'Forma_Mapa.pas' {Forma8},
+  Forma_Devices_Info in 'Forma_Devices_Info.pas' {FormaDevicesInfo},
+  Forma_EmulatioKit in 'Forma_EmulatioKit.pas' {FormaInfoEmu},
+  Forma_Termometro in 'Forma_Termometro.pas' {FormaTermometro},
+  Forma_AcercaDe in 'Forma_AcercaDe.pas' {FormaAcercaDe};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormaVentanaPrincipal, FormaVentanaPrincipal);
+  Application.CreateForm(TMasInfo, MasInfo);
+  Application.CreateForm(TFormaDatos, FormaDatos);
+  Application.CreateForm(TDevices, Devices);
+  Application.CreateForm(TForma8, Forma8);
+  Application.CreateForm(TFormaDevicesInfo, FormaDevicesInfo);
+  Application.CreateForm(TFormaInfoEmu, FormaInfoEmu);
+  Application.CreateForm(TFormaTermometro, FormaTermometro);
+  Application.CreateForm(TFormaAcercaDe, FormaAcercaDe);
+  Application.Run;
+end.

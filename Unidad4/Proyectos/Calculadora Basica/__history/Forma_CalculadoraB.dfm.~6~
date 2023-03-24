@@ -1,0 +1,46 @@
+object FormaCalculadoraB: TFormaCalculadoraB
+  Left = 0
+  Top = 0
+  Caption = 'Calculadora Basica Hibrida'
+  ClientHeight = 496
+  ClientWidth = 358
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 19
+  object Panel1: TPanel
+    Left = 8
+    Top = 80
+    Width = 342
+    Height = 408
+    Color = clBackground
+    ParentBackground = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 40
+      Top = 56
+      Width = 54
+      Height = 19
+      Caption = 'Label1'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -16
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
+  end
+  object Panel2: TPanel
+    Left = 8
+    Top = 8
+    Width = 342
+    Height = 66
+    Caption = 'Hibrida'
+    TabOrder = 1
+  end
+end

@@ -1,0 +1,144 @@
+object FormaAreas: TFormaAreas
+  Left = 0
+  Top = 0
+  Caption = 'Hibrida_Areas'
+  ClientHeight = 424
+  ClientWidth = 298
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 8
+    Top = 8
+    Width = 281
+    Height = 113
+    Caption = 'Areas'
+    TabOrder = 0
+  end
+  object Panel2: TPanel
+    Left = 8
+    Top = 127
+    Width = 281
+    Height = 290
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 42
+      Top = 19
+      Width = 27
+      Height = 13
+      Caption = 'Radio'
+    end
+    object Label2: TLabel
+      Left = 40
+      Top = 54
+      Width = 46
+      Height = 13
+      Caption = 'Perimetro'
+    end
+    object Label3: TLabel
+      Left = 40
+      Top = 86
+      Width = 29
+      Height = 13
+      Caption = 'Altura'
+    end
+    object Label4: TLabel
+      Left = 42
+      Top = 123
+      Width = 23
+      Height = 13
+      Caption = 'Base'
+    end
+    object Label5: TLabel
+      Left = 42
+      Top = 155
+      Width = 23
+      Height = 13
+      Caption = 'Area'
+    end
+    object EditRadio: TEdit
+      Left = 112
+      Top = 16
+      Width = 121
+      Height = 21
+      Alignment = taRightJustify
+      TabOrder = 0
+      Text = '0.0'
+    end
+    object Edit2: TEdit
+      Left = 112
+      Top = 51
+      Width = 121
+      Height = 21
+      Alignment = taRightJustify
+      TabOrder = 1
+      Text = '0.0'
+    end
+    object Edit3: TEdit
+      Left = 112
+      Top = 78
+      Width = 121
+      Height = 21
+      Alignment = taRightJustify
+      TabOrder = 2
+      Text = '0.0'
+    end
+    object Edit4: TEdit
+      Left = 112
+      Top = 121
+      Width = 121
+      Height = 21
+      Alignment = taRightJustify
+      TabOrder = 3
+      Text = '0.0'
+    end
+    object EditArea: TEdit
+      Left = 112
+      Top = 155
+      Width = 121
+      Height = 21
+      Alignment = taRightJustify
+      TabOrder = 4
+      Text = '0.0'
+    end
+    object Button1: TButton
+      Left = 48
+      Top = 200
+      Width = 75
+      Height = 25
+      Caption = 'Circulo'
+      TabOrder = 5
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 158
+      Top = 200
+      Width = 75
+      Height = 25
+      Caption = 'Triangulo'
+      TabOrder = 6
+    end
+    object Button3: TButton
+      Left = 48
+      Top = 240
+      Width = 75
+      Height = 25
+      Caption = 'Rectangulo'
+      TabOrder = 7
+    end
+    object Button4: TButton
+      Left = 158
+      Top = 240
+      Width = 75
+      Height = 25
+      Caption = 'Anillo'
+      TabOrder = 8
+    end
+  end
+end

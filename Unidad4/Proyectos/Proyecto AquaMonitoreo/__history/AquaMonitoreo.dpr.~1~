@@ -1,0 +1,22 @@
+program AquaMonitoreo;
+
+uses
+  Vcl.Forms,
+  Forma_Monitor in 'Forma_Monitor.pas' {FormaVentanaPrincipal},
+  Forma_MasInfo in 'Forma_MasInfo.pas' {MasInfo},
+  Forma_Datos in 'Forma_Datos.pas' {FormaDatos},
+  Forma_Devices in 'Forma_Devices.pas' {Devices},
+  Forma_Mapa in 'Forma_Mapa.pas' {Forma8};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormaVentanaPrincipal, FormaVentanaPrincipal);
+  Application.CreateForm(TMasInfo, MasInfo);
+  Application.CreateForm(TFormaDatos, FormaDatos);
+  Application.CreateForm(TDevices, Devices);
+  Application.CreateForm(TForma8, Forma8);
+  Application.Run;
+end.
